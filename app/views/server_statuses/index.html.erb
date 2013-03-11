@@ -1,0 +1,25 @@
+<h1>Listing server_statuses</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Url</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @server_statuses.each do |server_status| %>
+  <tr>
+    <td><%= server_status.title %></td>
+    <td><%= server_status.url %></td>
+    <td><%= link_to 'Show', server_status %></td>
+    <td><%= link_to 'Edit', edit_server_status_path(server_status) %></td>
+    <td><%= link_to 'Destroy', server_status, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Server status', new_server_status_path %>
